@@ -12,6 +12,11 @@
               },
             "env": [
                 {
+                    "name": "CONTAINER_NAME",
+                    "default": "heimdall",
+                    "label": "Docker Container Name"
+                },                
+                {
                     "name": "PATH_CONFIG",
                     "default": "/var/docker/config/heimdall",
                     "label": "Config Path"
@@ -25,6 +30,72 @@
                 }
                 
             ]
-        }
+        },
+        {
+            "title": "Paperless",
+            "description": "Paperless-ngx is a community-supported open-source document management system that transforms your physical documents into a searchable online archive so you can keep, well, less paper.",
+            "type": 3,
+            "logo": "https://raw.githubusercontent.com/ci-db/docker-lab/main/portainer_templates/images/paperless.png",
+            "repository": {
+                "stackfile": "compose-file/applications/paperless-ngx/docker-comose.yaml",
+                "url": "https://github.com/ci-db/docker-lab.git"
+              },
+            "env": [
+                {
+                    "name": "PATH_DB",
+                    "default": "/var/docker/data/paperless-ngx/db",
+                    "label": "Path DB Folder"
+
+                },
+                {
+                    "name": "PATH_MEDIA",
+                    "default": "/var/docker/data/paperless-ngx/media",
+                    "label": "Path Media Folder"
+
+                },
+                {
+                    "name": "PATH_DATA",
+                    "default": "/var/docker/data/paperless-ngx/data",
+                    "label": "Path Data Folder"
+
+                },
+                {
+                    "name": "PATH_EXPORT",
+                    "default": "/var/docker/data/paperless-ngx/export",
+                    "label": "Path EXPORT Folder"
+
+                },
+                {
+                    "name": "PATH_CONSUM",
+                    "default": "/var/docker/data/paperless-ngx/consume",
+                    "label": "Path Data Folder"
+
+                },
+                {
+                    "name": "PAPERLESS_ADMIN_USER",
+                    "default": "system",
+                    "label": "Admin Username"
+
+                },                
+                {
+                    "name": "PAPERLESS_ADMIN_MAIL",
+                    "default": "system@domain.com",
+                    "label": "Admin E-Mail"
+
+                },                
+                {
+                    "name": "PAPERLESS_ADMIN_PASSWORD",
+                    "default": "xxx",
+                    "label": "Admin Password"
+
+                },              
+                {
+                    "name": "PORT_HTTP",
+                    "default": "8000",
+                    "label": "Public Port"
+                }
+                
+            ]
+        }        
     ]
 }

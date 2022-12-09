@@ -2,6 +2,7 @@
 version: "2.1"
 services:
   heimdall:
+    container_name: ${CONTAINER_NAME_BROKER:-heimdall}
     image: linuxserver/heimdall:latest
     volumes:
       - /etc/localtime:/etc/localtime:ro    
