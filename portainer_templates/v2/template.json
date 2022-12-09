@@ -29,7 +29,7 @@
                 },
                 {
                     "name": "CONTAINER_NAME",
-                    "default": "heimdal",
+                    "default": "heimdall",
                     "label": "Docker Container Name"
                 },                
                 {
