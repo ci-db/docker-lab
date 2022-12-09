@@ -1,0 +1,45 @@
+---
+version: "3.4"
+services:
+  broker:
+    image: redis:6.0
+    restart: unless-stopped
+  db:
+    image: postgres:13
+    restart: unless-stopped
+    volumes:
+      - ${PATH_DB:-/var/docker/data/paperless-ngx/db}:/var/lib/postgresql/data
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-paperless}
+      POSTGRES_USER: ${POSTGRES_USER:-paperless}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-paperless}
+  webserver:
+    image: ghcr.io/paperless-ngx/paperless-ngx:latest
+    restart: unless-stopped
+    depends_on:
+      - db
+      - broker
+    ports:
+      -  ${HTTP_PORT:-4048}:8000
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+    volumes:
+      #- /mnt/data/apps-data/paperless:/usr/src/paperless/media
+      - ${PATH_MEDIA:-/var/docker/data/paperless-ngx/media}:/usr/src/paperless/media
+      - ${PATH_DATA:-/var/docker/data/paperless-ngx/data}:/usr/src/paperless/data
+      - ${PATH_EXPORT:-/var/docker/data/paperless-ngx/export}:/usr/src/paperless/export
+      - ${PATH_CONSUM:-/var/docker/data/paperless-ngx/consume}:/usr/src/paperless/consume
+      - "/etc/timezone:/etc/timezone:ro"
+      - "/etc/localtime:/etc/localtime:ro"
+    environment:
+      PAPERLESS_REDIS: redis://broker:6379
+      PAPERLESS_DBHOST: db
+      PAPERLESS_ADMIN_USER: ${PAPERLESS_ADMIN_USER:-admin}
+      PAPERLESS_ADMIN_MAIL: ${PAPERLESS_ADMIN_MAIL:-admin@domain.com}
+      PAPERLESS_ADMIN_PASSWORD: 
+      PAPERLESS_TIME_ZONE: ${PAPERLESS_TIME_ZONE:-Europe/Berlin}

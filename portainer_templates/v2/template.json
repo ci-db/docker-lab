@@ -25,7 +25,7 @@
                 {
                     "name": "PATH_REL",
                     "default": "heimdall",
-                    "label": "Config Dir"
+                    "label": "Config Directory"
                 },
                 {
                     "name": "CONTAINER_NAME",
