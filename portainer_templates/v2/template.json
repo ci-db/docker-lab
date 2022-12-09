@@ -1,0 +1,38 @@
+{
+    "version": "2",
+    "templates": [
+        {
+            "title": "Heimdal",
+            "description": "Heimdall is a way to organise all those links to your most used web sites and web applications in a simple way. Simplicity is the key to Heimdall. Why not use it as your browser start page? It even has the ability to include a search bar using either Google, Bing or DuckDuckGo.",
+            "type": 3,
+            "logo": "https://raw.githubusercontent.com/ci-db/docker-lab/portainer_templates/master/images/heimdall-icon.png",
+            "repository": {
+                "stackfile": "compose-file/applications/heimdall/docker-comose.yaml",
+                "url": "https://github.com/ci-db/docker-lab.git"
+              },
+            "env": [
+                {
+                    "name": "IMAGE_VERSION",
+                    "default": "latest"
+                },
+                {
+                    "name": "PATH_CONTAINER_CONFIG",
+                    "default": "/var/docker/config"
+                },
+                {
+                    "name": "PATH_REL",
+                    "default": "heimdall"
+                },
+                {
+                    "name": "CONTAINER_NAME",
+                    "default": "Heimdal"
+                },                
+                {
+                    "name": "PORT_HTTP",
+                    "default": "7021"
+                }
+                
+            ]
+        }
+    ]
+}
