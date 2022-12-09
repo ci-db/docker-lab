@@ -7,7 +7,7 @@
             "type": 3,
             "logo": "https://raw.githubusercontent.com/ci-db/docker-lab/main/portainer_templates/images/heimdall-icon.png",
             "repository": {
-                "stackfile": "compose-file/applications/heimdall/docker-comose.yaml",
+                "stackfile": "compose-file/applications/heimdall/docker-compose.yaml",
                 "url": "https://github.com/ci-db/docker-lab.git"
               },
             "env": [
@@ -37,7 +37,7 @@
             "type": 3,
             "logo": "https://raw.githubusercontent.com/ci-db/docker-lab/main/portainer_templates/images/paperless.png",
             "repository": {
-                "stackfile": "compose-file/applications/paperless-ngx/docker-comose.yaml",
+                "stackfile": "compose-file/applications/paperless-ngx/docker-compose.yaml",
                 "url": "https://github.com/ci-db/docker-lab.git"
               },
             "env": [
@@ -62,7 +62,7 @@
                 {
                     "name": "PATH_EXPORT",
                     "default": "/var/docker/data/paperless-ngx/export",
-                    "label": "Path EXPORT Folder"
+                    "label": "Path Export Folder"
 
                 },
                 {
@@ -93,7 +93,12 @@
                     "name": "PORT_HTTP",
                     "default": "8000",
                     "label": "Public Port"
-                }
+                },
+                {
+                    "name": "PAPERLESS_TIME_ZONE",
+                    "default": "Europe/Berlin",
+                    "label": "TimeZone"
+                }                           
                 
             ]
         }        
