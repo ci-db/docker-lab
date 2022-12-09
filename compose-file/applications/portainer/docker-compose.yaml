@@ -1,13 +1,13 @@
 services:
   portainer:
-    image: portainer/portainer-ce:latest
-    container_name: portainer
+    image: portainer/portainer-ce:${IMAGE_VERSION:-latest}
+    container_name: ${CONTAINER_NAME:-portainer}
     restart: unless-stopped
     security_opt:
       - no-new-privileges:true
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - ${PATH_CONTAINER_DATA:-./data}/${REL_DATA_DIR:-./portainer}:/data
+      - ${PATH_CONTAINER_DATA:-/var/docker/data}/${PATH_REL:-portainer}:/data
     ports:
-      - 9000:9000
+      - ${PORT_HTTP:-9000}:9000

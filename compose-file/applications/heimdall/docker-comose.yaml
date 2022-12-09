@@ -1,0 +1,12 @@
+version: "2.1"
+services:
+  heimdall:
+    image: linuxserver/heimdall:${IMAGE_VERSION:-latest}
+    container_name: ${CONTAINER_NAME:-heimdall}
+    volumes:
+      - /etc/localtime:/etc/localtime:ro    
+      - /etc/timezone:/etc/timezone:ro    
+      - ${PATH_CONTAINER_CONFIG:-/var/docker/config}/${PATH_REL:-heimdall}:/config
+    ports:
+      - ${PORT_HTTP:-7021}:80
+    restart: unless-stopped

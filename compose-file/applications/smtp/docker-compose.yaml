@@ -5,7 +5,7 @@ networks:
       external: true
 services:
   smtp:
-    image: boky/postfix
+    image: boky/postfix:${IMAGE_VERSION:-latest}
     container_name: ${CONTAINER_NAME:-smtp}
     restart: unless-stopped
     networks:
