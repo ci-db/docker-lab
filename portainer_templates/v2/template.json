@@ -68,7 +68,7 @@
                 {
                     "name": "PATH_CONSUM",
                     "default": "/var/docker/data/paperless-ngx/consume",
-                    "label": "Path Data Folder"
+                    "label": "Path Consum Folder"
 
                 },
                 {
