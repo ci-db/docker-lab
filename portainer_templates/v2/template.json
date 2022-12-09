@@ -13,23 +13,30 @@
             "env": [
                 {
                     "name": "IMAGE_VERSION",
-                    "default": "latest"
+                    "default": "latest",
+                    "label": "Docker Version"
                 },
                 {
                     "name": "PATH_CONTAINER_CONFIG",
-                    "default": "/var/docker/config"
+                    "default": "/var/docker/config",
+                    "label": "Config Root Path"
+
                 },
                 {
                     "name": "PATH_REL",
-                    "default": "heimdall"
+                    "default": "heimdall",
+                    "label": "Config Dir"
                 },
                 {
                     "name": "CONTAINER_NAME",
-                    "default": "Heimdal"
+                    "default": "Heimdal",
+                    "label": "Docker Container Name"
                 },                
                 {
                     "name": "PORT_HTTP",
-                    "default": "7021"
+                    "default": "7021",
+                    "label": "Public Port"
+
                 }
                 
             ]
