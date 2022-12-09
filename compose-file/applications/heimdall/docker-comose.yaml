@@ -3,6 +3,8 @@ services:
   heimdall:
     image: linuxserver/heimdall:${IMAGE_VERSION:-latest}
     container_name: ${CONTAINER_NAME:-heimdall}
+    environments:
+      - test=${TESTVAR:-1}
     volumes:
       - /etc/localtime:/etc/localtime:ro    
       - /etc/timezone:/etc/timezone:ro    
