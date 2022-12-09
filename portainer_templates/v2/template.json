@@ -10,12 +10,7 @@
                 "stackfile": "compose-file/applications/heimdall/docker-compose.yaml",
                 "url": "https://github.com/ci-db/docker-lab.git"
               },
-            "env": [
-                {
-                    "name": "CONTAINER_NAME",
-                    "default": "heimdall",
-                    "label": "Docker Container Name"
-                },                
+            "env": [           
                 {
                     "name": "PATH_CONFIG",
                     "default": "/var/docker/config/heimdall",
