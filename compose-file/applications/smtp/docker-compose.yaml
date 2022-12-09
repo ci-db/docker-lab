@@ -1,0 +1,18 @@
+version: "3.4"
+networks:
+  smtp:
+      name: ${NETWORK_SMTP:-smtp}
+      external: true
+services:
+  smtp:
+    image: boky/postfix
+    container_name: ${CONTAINER_NAME:-smtp}
+    restart: unless-stopped
+    networks:
+        - ${NETWORK_SMTP:-smtp}
+    environment:
+        HOSTNAME: ${HOSTNAME:-smtp}
+        RELAYHOST: ${RELAYHOST:-smtp.ionos.de:587}
+        RELAYHOST_USERNAME:
+        RELAYHOST_PASSWORD:
+        ALLOW_EMPTY_SENDER_DOMAINS: ${ALLOW_EMPTY_SENDER_DOMAINS:-true}
