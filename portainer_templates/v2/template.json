@@ -96,6 +96,55 @@
                 }                           
                 
             ]
-        }        
+        },
+        {
+            "title": "Syncthing",
+            "description": "Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers in real time, safely protected from prying eyes.",
+            "type": 3,
+            "logo": "https://raw.githubusercontent.com/ci-db/docker-lab/main/portainer_templates/images/syncthing-icon",
+            "repository": {
+                "stackfile": "compose-file/applications/syncthing/docker-compose.yaml",
+                "url": "https://github.com/ci-db/docker-lab.git"
+              },
+            "env": [           
+                {
+                    "name": "PATH_CONFIG",
+                    "default": "/var/docker/config/syncthing",
+                    "label": "Config Path"
+
+                },
+                {
+                    "name": "PATH_DATA1",
+                    "default": "/var/docker/data/syncthing/data1",
+                    "label": "Data 1 Path"
+
+                },                
+                {
+                    "name": "PORT_ADMIN",
+                    "default": "8384",
+                    "label": "Admin Port"
+
+                },
+                {
+                    "name": "PORT_TCP",
+                    "default": "22000",
+                    "label": "Public TCP"
+
+                },
+                {
+                    "name": "PORT_UDP",
+                    "default": "22000",
+                    "label": "Public UDP"
+
+                },
+                {
+                    "name": "PORT_BROADCAST",
+                    "default": "21027",
+                    "label": "Broadcast Port"
+
+                }                                
+                
+            ]
+        }           
     ]
 }
