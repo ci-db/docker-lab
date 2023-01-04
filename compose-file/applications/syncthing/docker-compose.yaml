@@ -15,8 +15,8 @@ services:
       - ${PATH_CONFIG:-/var/docker/config/syncthing}:/config  
       - ${PATH_DATA1:-/var/docker/data/syncthing/data1}:/data1
     ports:
-      - 8384:8384
-      - 22000:22000/tcp
-      - 22000:22000/udp
-      - 21027:21027/udp
+      - ${PORT_ADMIN:-8384}:8384
+      - ${PORT_TCP:-22000}:22000/tcp
+      - ${PORT_UDP:-22000}:22000/udp
+      - ${PORT_BROADCAST:-21027}:21027/udp
     restart: unless-stopped

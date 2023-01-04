@@ -101,7 +101,7 @@
             "title": "Syncthing",
             "description": "Syncthing is a continuous file synchronization program. It synchronizes files between two or more computers in real time, safely protected from prying eyes.",
             "type": 3,
-            "logo": "https://raw.githubusercontent.com/ci-db/docker-lab/main/portainer_templates/images/syncthing-icon",
+            "logo": "https://raw.githubusercontent.com/ci-db/docker-lab/main/portainer_templates/images/syncthing-icon.png",
             "repository": {
                 "stackfile": "compose-file/applications/syncthing/docker-compose.yaml",
                 "url": "https://github.com/ci-db/docker-lab.git"
