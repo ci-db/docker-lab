@@ -25,7 +25,7 @@ services:
       - db
       - broker
     ports:
-      -  ${HTTP_PORT:-4048}:8000
+      -  ${PORT_HTTP:-4048}:8000
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8000"]
       interval: 30s
