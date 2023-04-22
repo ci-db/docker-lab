@@ -1,10 +1,15 @@
 ---
 version: "3.4"
+networks:
+    paperless:
+        name: ${NETWORK_NAME:-paperless}
 services:
   broker:
     container_name: ${CONTAINER_NAME_BROKER:-paperless_broker}
     image: redis:6.0
     restart: unless-stopped
+    networks:
+        - ${NETWORK_NAME:-paperless}    
   db:
     container_name: ${CONTAINER_NAME_DB:-paperless_db}
     image: postgres:13
@@ -17,6 +22,8 @@ services:
       POSTGRES_DB: paperless
       POSTGRES_USER: paperless
       POSTGRES_PASSWORD: paperless
+    networks:
+        - ${NETWORK_NAME:-paperless}    
   webserver:
     container_name: ${CONTAINER_NAME_WEBSERVER:-paperless_webserver}
     image: ghcr.io/paperless-ngx/paperless-ngx:latest
@@ -46,3 +53,5 @@ services:
       PAPERLESS_ADMIN_MAIL: ${PAPERLESS_ADMIN_MAIL:-admin@domain.com}
       PAPERLESS_ADMIN_PASSWORD: 
       PAPERLESS_TIME_ZONE: ${PAPERLESS_TIME_ZONE:-Europe/Berlin}
+    networks:
+        - ${NETWORK_NAME:-paperless}    
