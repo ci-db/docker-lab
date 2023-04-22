@@ -55,12 +55,6 @@
 
                 },
                 {
-                    "name": "NETWORK_NAME",
-                    "default": "paperless",
-                    "label": "Netzwerk Name"
-
-                },
-                {
                     "name": "PATH_DB",
                     "default": "/var/docker/data/paperless-ngx/db",
                     "label": "Path DB Folder"
