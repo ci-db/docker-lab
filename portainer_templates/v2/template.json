@@ -37,6 +37,24 @@
               },
             "env": [
                 {
+                    "name": "CONTAINER_NAME_BROKER",
+                    "default": "paperless_broker",
+                    "label": "ContainerName Cache"
+
+                },
+                {
+                    "name": "CONTAINER_NAME_WEBSERVER",
+                    "default": "paperless_webserver",
+                    "label": "ContainerName Webserver"
+
+                },
+                {
+                    "name": "CONTAINER_NAME_DB",
+                    "default": "paperless_db",
+                    "label": "ContainerName Datenbank"
+
+                },
+                {
                     "name": "PATH_DB",
                     "default": "/var/docker/data/paperless-ngx/db",
                     "label": "Path DB Folder"
