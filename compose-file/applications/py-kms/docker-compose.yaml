@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+  kms:
+    image: ghcr.io/py-kms-organization/py-kms:python3
+    container_name: ${CONTAINER_NAME:-py-kms}
+    ports:
+      - 1688:1688
+      - ${PORT_HTTP:-4060}:8080
+    environment:
+      IP: "::"
+      HWID: RANDOM
+      LOGLEVEL: INFO
+    restart: always
+    volumes:
+      - ${PATH_DB:-/var/docker/data/py-kms/db}:/home/py-kms/db
+      - /etc/localtime:/etc/localtime:ro

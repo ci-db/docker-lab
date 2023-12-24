@@ -163,6 +163,37 @@
                 }                                
                 
             ]
+        },      
+        {
+            "title": "py-kms",
+            "description": "Windows Service",
+            "type": 3,
+            "logo": "https://raw.githubusercontent.com/ci-db/docker-lab/main/portainer_templates/images/py-kms.png",
+            "repository": {
+                "stackfile": "compose-file/applications/py-kms/docker-compose.yaml",
+                "url": "https://github.com/ci-db/docker-lab.git"
+              },
+            "env": [      
+                {
+                    "name": "CONTAINER_NAME",
+                    "default": "py-kms",
+                    "label": "ContainerName"
+
+                },                     
+                {
+                    "name": "PATH_DB",
+                    "default": "/var/docker/data/py-kms/db",
+                    "label": "Database Path"
+
+                },
+                {
+                    "name": "PORT_HTTP",
+                    "default": "4060",
+                    "label": "Webserver Port"
+
+                }                               
+                
+            ]
         }           
     ]
 }
