@@ -204,7 +204,14 @@
                 "stackfile": "compose-file/applications/goauthentik/docker-compose.yaml",
                 "url": "https://github.com/ci-db/docker-lab.git"
               },
-            "env": [      
+            "env": [ 
+                {
+                    "name": "PG_PASS",
+                    "label": "Database Password",
+                    "default": "nJ5JeAFk5YopW7ooYM4Lp4",
+                    "description": "Save Password please"
+
+                },                     
                 {
                     "name": "CLIENT_USER",
                     "default": "root",
@@ -244,11 +251,7 @@
                     "name": "PG_USER",
                     "default": "authentik",
                     "label": "Database User"
-                },                        
-                {
-                    "name": "PG_PASS",
-                    "label": "Database Password"
-                },  
+                },                          
                 {
                     "name": "PATH_DB",
                     "default": "/var/docker/data/goauthentik/db",
