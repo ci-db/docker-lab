@@ -206,6 +206,60 @@
               },
             "env": [ 
                 {
+                    "name": "SECRET_KEY",
+                    "label": "SECRET_KEY",
+                    "default": "U9TaaYcRJkFnobaWgH6tSFqaoeu9eGvopoiLQ60gHP9LrVCx"
+                },                     
+                {
+                    "name": "ERROR_REPORTING_ENABLED",
+                    "label": "Errors Reports anable",
+                    "default": "true"
+                },                     
+                {
+                    "name": "SMTP_HOST",
+                    "label": "SMTP Host",
+                    "default": ""
+                },                     
+                {
+                    "name": "SMTP_PORT",
+                    "label": "SMTP Port",
+                    "default": "587"
+                },                                        
+                {
+                    "name": "SMTP_USE_TLS",
+                    "label": "Use SMTP TLS",
+                    "default": "true"
+                },                                        
+                {
+                    "name": "SMTP_USE_SSL",
+                    "label": "SMTP SSL",
+                    "default": "false"
+                },                                        
+                {
+                    "name": "SMTP_USERNAME",
+                    "label": "SMTP Username"
+                },                                        
+                {
+                    "name": "SMTP_PASSWORD",
+                    "label": "SMTP Password"
+                },                                        
+                {
+                    "name": "SMTP_FROM",
+                    "label": "SMTP From"
+                },                                        
+                {
+                    "name": "SMTP_TIMEOUT",
+                    "label": "SMTP Timeout",
+                    "default": "10"
+                },                                        
+                {
+                    "name": "PG_PASS",
+                    "label": "Database Password",
+                    "default": "nJ5JeAFk5YopW7ooYM4Lp4",
+                    "description": "Save Password please"
+
+                },                     
+                {
                     "name": "PG_PASS",
                     "label": "Database Password",
                     "default": "nJ5JeAFk5YopW7ooYM4Lp4",
