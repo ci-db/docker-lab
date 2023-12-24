@@ -194,6 +194,111 @@
                 }                               
                 
             ]
-        }           
+        }, 
+        {
+            "title": "goauthentik",
+            "description": "authentik is an open-source Identity Provider focused on flexibility and versatility. You can use authentik in an existing environment to add support for new protocols, implement sign-up/recovery/etc. in your application so you don't have to deal with it, and many other things",
+            "type": 3,
+            "logo": "https://raw.githubusercontent.com/ci-db/docker-lab/main/portainer_templates/images/goauthentik.png",
+            "repository": {
+                "stackfile": "compose-file/applications/goauthentik/docker-compose.yaml",
+                "url": "https://github.com/ci-db/docker-lab.git"
+              },
+            "env": [      
+                {
+                    "name": "CLIENT_USER",
+                    "default": "root",
+                    "label": "Run User for Client",
+                    "description": "Removing `user: root` also prevents the worker from fixing the permissions on the mounted folders, so when removing this make sure the folders have the correct UID/GID (1000:1000 by default)"
+                },   
+                {
+                    "name": "AUTHENTIK_TAG",
+                    "default": "latest",
+                    "label": "Docker Tag Version"
+
+                },   
+                {
+                    "name": "PORT_HTTP",
+                    "default": "4053",
+                    "label": "HTTP Port"
+
+                },                  
+                {
+                    "name": "PORT_HTTPS",
+                    "default": "4054",
+                    "label": "HTTPS Port"
+
+                },                  
+                {
+                    "name": "CONTAINER_NAME_DATABASE",
+                    "default": "goauthentik-database",
+                    "label": "ContainerName Database"
+
+                },   
+                {
+                    "name": "PG_DB",
+                    "default": "authentik",
+                    "label": "Database Name"
+                },                        
+                {
+                    "name": "PG_USER",
+                    "default": "authentik",
+                    "label": "Database User"
+                },                        
+                {
+                    "name": "PG_PASS",
+                    "label": "Database Password"
+                },  
+                {
+                    "name": "PATH_DB",
+                    "default": "/var/docker/data/goauthentik/db",
+                    "label": "Database Path"
+
+                },                                      
+                {
+                    "name": "CONTAINER_NAME_REDIS",
+                    "default": "goauthentik-redis",
+                    "label": "ContainerName Redis"
+
+                },      
+                {
+                    "name": "PATH_REDIS",
+                    "default": "/var/docker/data/goauthentik/redis",
+                    "label": "Redis Path"
+
+                },    
+                {
+                    "name": "CONTAINER_NAME_SERVER",
+                    "default": "goauthentik-server",
+                    "label": "ContainerName Server"
+
+                },   
+                {
+                    "name": "PATH_MEDIA",
+                    "default": "/var/docker/data/goauthentik/media",
+                    "label": "Media Path"
+
+                },
+                {
+                    "name": "PATH_TEMPLATES",
+                    "default": "/var/docker/config/goauthentik/templates",
+                    "label": "Custom Templates Path"
+
+                },                                
+                {
+                    "name": "CONTAINER_NAME_WORKER",
+                    "default": "goauthentik-worker",
+                    "label": "ContainerName Worker"
+
+                },   
+                {
+                    "name": "PATH_CERTS",
+                    "default": "/var/docker/data/goauthentik/certs",
+                    "label": "Cert Path"
+
+                }                            
+                
+            ]
+        }              
     ]
 }
